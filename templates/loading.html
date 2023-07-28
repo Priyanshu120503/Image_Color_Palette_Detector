@@ -1,0 +1,21 @@
+{% include "header.html" %}
+
+      <div class="d-flex justify-content-evenly align-items-center">
+
+        {% if filename %}
+          <div class="text-center bg-light mx-3 border rounded image-box d-flex flex-column justify-content-start">
+              <img src="{{ url_for('static', filename='uploads/' + filename) }}" class="m-auto image">
+          </div>
+        {% endif %}
+
+<!--        <div class="mx-3 border border-warning align-self-stretch"></div>-->
+
+        <div class="mx-2 result-box border rounded d-flex flex-column justify-content-center align-items-center">
+            <p class="display-5">Loading</p>
+            <iframe src="https://giphy.com/embed/grNkIEN4dkiMXFLIE9" width="300" class="giphy-embed" ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script> window.location.replace("/result/{{filename}}"); </script>
+{% include "footer.html" %}

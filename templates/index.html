@@ -1,0 +1,23 @@
+{% include "header.html" %}
+
+        <div class="text-center mx-3 border rounded image-box d-flex flex-column justify-content-center">
+          <p class="display-6">Insert <br />Image</p>
+          <form method="post" action={{url_for('home')}} enctype="multipart/form-data">
+            <label for="img_chooser" class="btn btn-outline-light btn-lg pt-0 px-3 fs-1">+</label>
+            <input type="file" id="img_chooser" name="file" class="btn btn-outline-light btn-lg display-6 px-3"
+                   accept="image/*" hidden onchange="this.form.submit()" />
+          </form>
+          {% for message in get_flashed_messages(): %}
+            <p class="text-danger mt-1">{{ message }}</p>
+          {% endfor %}
+        </div>
+
+<!--        <div class="mx-3 border border-warning align-self-stretch"></div>-->
+
+        <div class="mx-3 result-box border rounded d-flex flex-column justify-content-center">
+          <p class="lead fs-3">Top 10 Colors</p>
+        </div>
+      </div>
+    </div>
+
+{% include "footer.html" %}

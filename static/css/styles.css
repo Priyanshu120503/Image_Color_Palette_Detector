@@ -1,0 +1,23 @@
+.image-box {
+    width: 60rem;
+    min-height: 30rem;
+    max-height: 42rem;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.result-box {
+    width: 15rem;
+    min-height: 42rem;
+}
+
+.color-span {
+    width: 8rem;
+    min-height: 2rem;
+}
+
+.image {
+    max-width: 59rem;
+    max-height: 50rem;
+}
+

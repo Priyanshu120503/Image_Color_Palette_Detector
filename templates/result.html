@@ -1,0 +1,33 @@
+{% include "header.html" %}
+
+      <div class="d-flex justify-content-evenly align-items-center">
+
+        {% if filename %}
+          <div class="text-center bg-light mx-3 border rounded image-box d-flex flex-column justify-content-start position-relative">
+              <form action="{{url_for('home')}}" method="get" class="position-fixed">
+                <button type="submit" class="btn btn-dark">Reset Image</button>
+              </form>
+              <img src="{{ url_for('static', filename='uploads/' + filename) }}" class="m-auto image">
+          </div>
+        {% endif %}
+
+<!--        <div class="mx-3 border border-warning align-self-stretch"></div>-->
+
+        <div class="mx-3 result-box border rounded d-flex flex-column justify-content-center">
+            <p class="lead">Top 10 Colors</p>
+            {% for color in top_colors %}
+              <div class="d-flex py-2 align-items-center justify-content-center ">
+                {% if color[0] > 200 and color[1] > 200 and color[2] > 200: %}
+                  <span style="background-color:rgb{{color}}; color: black;"
+                        class="color-span border border-secondary-subtle rounded my-1 pt-2 pb-1">{{ color }}</span>
+                {% else: %}
+                  <span style="background-color:rgb{{color}};"
+                        class="color-span border border-secondary-subtle rounded my-1 pt-2 pb-1">{{ color }}</span>
+                {% endif %}
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+{% include "footer.html" %}
